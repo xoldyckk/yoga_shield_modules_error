@@ -1,0 +1,11 @@
+overwrite: true
+schema: "src/graphql/application/**/*.ts"
+generates:
+  ./src/graphql/application/:
+    preset: graphql-modules
+    presetConfig:
+      baseTypesPath: ./generatedGraphqlSchemaTypes.ts # Where to create the complete schema types
+      filename: generatedGraphqlModuleTypes.ts # Where to create each module types
+    plugins:
+      - typescript
+      - typescript-resolvers
